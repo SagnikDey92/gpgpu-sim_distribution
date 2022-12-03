@@ -1334,6 +1334,7 @@ void bar_impl( const ptx_instruction *pIin, ptx_thread_info *thread )
 
    thread->m_last_dram_callback.function = bar_callback;
    thread->m_last_dram_callback.instruction = pIin;
+   printf("Ayo barrier!\n");
 }
 
 void bfe_impl( const ptx_instruction *pI, ptx_thread_info *thread ) { inst_not_implemented(pI); }

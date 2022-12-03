@@ -61,6 +61,11 @@ mem_fetch::mem_fetch( const mem_access_t &access,
    m_status_change = gpu_sim_cycle + gpu_tot_sim_cycle;
    m_mem_config = config;
    icnt_flit_size = config->icnt_flit_size;
+   printf("Ayo ");
+   if (m_access.is_write())
+      printf("write!\n");
+   else
+      printf("read!\n");
 }
 
 mem_fetch::~mem_fetch()
