@@ -9,6 +9,7 @@ std::vector<int> getTID(ptx_thread_info* thread) {
     std::vector<int> ftid;
     ftid.push_back(tid.x); ftid.push_back(tid.y); ftid.push_back(tid.z);
     ftid.push_back(cta.x); ftid.push_back(cta.y); ftid.push_back(cta.z);
+    return ftid;
 }
 
 namespace tool {
