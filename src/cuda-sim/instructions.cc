@@ -41,6 +41,8 @@
 #include "../gpgpu-sim/gpu-sim.h"
 #include "../gpgpu-sim/shader.h"
 
+#include "../lock_fix.h"
+
 #include <stdarg.h>
 
 unsigned ptx_instruction::g_num_ptx_inst_uid=0;
@@ -1025,15 +1027,24 @@ void atom_callback( const inst_t* inst, ptx_thread_info* thread)
          case U32_TYPE:
             op_result.u32 = MY_CAS_I(data.u32, src2_data.u32, src3_data.u32);
             data_ready = true;
+            //Lock operation
+            if(src2_data.u32 == 0 && src3_data.u32 == 1 && data.u32 == 0)
+               tool::acquire(effective_address, thread);
             break;
          case B64_TYPE:
          case U64_TYPE:
             op_result.u64 = MY_CAS_I(data.u64, src2_data.u64, src3_data.u64);
             data_ready = true;
+            // Lock operation
+            if(src2_data.u64 == 0 && src3_data.u64 == 1 && data.u64 == 0)
+               tool::acquire(effective_address, thread);
             break;
          case S32_TYPE:
             op_result.s32 = MY_CAS_I(data.s32, src2_data.s32, src3_data.s32);
             data_ready = true;
+            // Lock operation
+            if(src2_data.s32 == 0 && src3_data.s32 == 1 && data.s32 == 0)
+               tool::acquire(effective_address, thread);
             break;
          default:
             printf("Execution error: type mismatch (%x) with instruction\natom.CAS only accepts b32 and b64\n", to_type);
@@ -1051,15 +1062,26 @@ void atom_callback( const inst_t* inst, ptx_thread_info* thread)
          case U32_TYPE:
             op_result.u32 = MY_EXCH(data.u32, src2_data.u32);
             data_ready = true;
+            // Unlock operation
+            if(src2_data.u32 == 0)
+               tool::release(effective_address, thread);
+            break;
             break;
          case B64_TYPE:
          case U64_TYPE:
+            // Unlock operation
+            if(src2_data.u64 == 0)
+               tool::release(effective_address, thread);
+            break;
             op_result.u64 = MY_EXCH(data.u64, src2_data.u64);
             data_ready = true;
             break;
          case S32_TYPE:
             op_result.s32 = MY_EXCH(data.s32, src2_data.s32);
             data_ready = true;
+            // Unlock operation
+            if(src2_data.s32 == 0)
+               tool::release(effective_address, thread);
             break;
          default:
             printf("Execution error: type mismatch (%x) with instruction\natom.EXCH only accepts b32\n", to_type);
