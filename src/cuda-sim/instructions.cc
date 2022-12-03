@@ -2358,6 +2358,7 @@ void ld_exec( const ptx_instruction *pI, ptx_thread_info *thread )
    }
    thread->m_last_effective_address = addr;
    thread->m_last_memory_space = space; 
+   // Read from addr
 }
 
 void ld_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 
@@ -3733,6 +3734,8 @@ void st_impl( const ptx_instruction *pI, ptx_thread_info *thread )
    }
    thread->m_last_effective_address = addr;
    thread->m_last_memory_space = space; 
+   // Write to addr
+   tool::write(addr, thread);
 }
 
 void sub_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 
