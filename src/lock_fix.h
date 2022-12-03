@@ -14,4 +14,6 @@ namespace tool {
     void acquire(uint64_t addr, ptx_thread_info* thread);
 
     void release(uint64_t addr, ptx_thread_info* thread);
+
+    void activate_locks(ptx_thread_info* thread);
 }

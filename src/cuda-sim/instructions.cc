@@ -2608,6 +2608,7 @@ void max_impl( const ptx_instruction *pI, ptx_thread_info *thread )
 void membar_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 
 { 
    // handled by timing simulator 
+   tool::activate_locks(thread);
 }
 
 void min_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 
