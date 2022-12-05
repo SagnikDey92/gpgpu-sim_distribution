@@ -45,6 +45,11 @@ namespace tool {
 
     void write(uint64_t addr, ptx_thread_info* thread) {
         std::vector<int> ftid = getTID(thread);
+        printf("(");
+        for (int i = 0; i<6; ++i) {
+            printf("%d,", ftid[i]);
+        }
+        printf("): write/read at %x\n", addr);
         std::set<uint64_t> prev = addr_lockset[addr];
         std::set<uint64_t> curr;
 
