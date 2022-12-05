@@ -3,6 +3,10 @@
 std::map<std::vector<int>, std::set<std::pair<uint64_t, bool>>>  thr_lockset;
 std::map<uint64_t, std::set<uint64_t>> addr_lockset;
 
+// std::map<std::vector<int>, int> delay;
+// std::map<uint64_t, uint64_t> dLock;
+// std::map<std::mutex*, std::vector<int>> lockToThread;
+
 std::vector<int> getTID(ptx_thread_info* thread) {
     dim3 tid = thread->get_tid();
     dim3 cta = thread->get_ctaid();
@@ -40,6 +44,15 @@ namespace tool {
         std::vector<int> ftid = getTID(thread);
         std::set<uint64_t> prev = addr_lockset[addr];
         std::set<uint64_t> curr;
+
+        if (delay.find(ftid) != delay.end() && delay[ftid]!=0) {
+            delay[ftid]--;  // Reduce delay
+            if (delay[ftid] == 0) {
+                //Unlock
+                threadToLock[ftid]->unlock();
+            }
+        }
+
         for (std::pair<uint64_t, bool> p: thr_lockset[ftid]) {
             if (p.second)
                 curr.insert(p.first);
@@ -56,7 +69,36 @@ namespace tool {
         for (uint64_t l: temp)
             addr_lockset[addr].insert(l);
         if (temp.empty()) {
-            printf("Accessed address %x with no locks held!\n", addr);
+            if (dLock.find(addr) == dLock.end()) {
+                std::mutex* L = new std::mutex();
+                L->lock();
+                lockToThread[L] = ftid;
+                dLock[addr] = L;
+                delay[ftid] = D;
+                printf("Accessed address %x with no locks held!. Associated lock %x with it.\n", addr, L);
+            }
+            else {
+                //Already have lock associated with this addr
+                //Check if current thread holds it.
+                std::mutex* L = dLock[addr];
+                if (lockToThread[L] != ftid) {
+                    L->lock();
+                    lockToThread[L] = ftid;
+                    dLock[addr] = L;
+                    delay[ftid] = D;
+                }
+
+                // If current thread holds it, no change.
+            }
         }
+    }
+
+    void read(uint64_t addr, ptx_thread_info* thread) {
+        write(addr, thread);
+    }
+
+    void exit_thr(ptx_thread_info* thread) {
+        std::vector<int> ftid = getTID(thread);
+        threadToLock[ftid]->unlock();
     }
 }

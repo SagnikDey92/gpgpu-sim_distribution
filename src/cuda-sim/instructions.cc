@@ -2225,6 +2225,7 @@ void ex2_impl( const ptx_instruction *pI, ptx_thread_info *thread )
 
 void exit_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 
 {
+   tool::exit_thr(thread);
    thread->set_done();
    thread->exitCore();
    thread->registerExit();
@@ -2358,6 +2359,7 @@ void ld_exec( const ptx_instruction *pI, ptx_thread_info *thread )
    }
    thread->m_last_effective_address = addr;
    thread->m_last_memory_space = space; 
+   tool::read(addr, thread);
    // Read from addr
 }
 
