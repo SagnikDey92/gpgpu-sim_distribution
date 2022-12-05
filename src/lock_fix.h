@@ -16,7 +16,7 @@ extern std::map<uint64_t, std::mutex*> dLock;
 extern std::map<std::mutex*, std::vector<int>> lockToThread;
 extern std::map<std::vector<int>, std::mutex*> threadToLock;
 
-int D;  //Fix when thread exits
+extern int D;  //Fix when thread exits
 
 namespace tool {
     void acquire(uint64_t addr, ptx_thread_info* thread);
