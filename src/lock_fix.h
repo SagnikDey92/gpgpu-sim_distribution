@@ -11,12 +11,12 @@
 #include "cuda-sim/ptx_sim.h"
 #include "abstract_hardware_model.h"
 
-std::map<std::vector<int>, int> delay;
-std::map<uint64_t, std::mutex*> dLock;
-std::map<std::mutex*, std::vector<int>> lockToThread;
-std::map<std::vector<int>, std::mutex*> threadToLock;
+extern std::map<std::vector<int>, int> delay;
+extern std::map<uint64_t, std::mutex*> dLock;
+extern std::map<std::mutex*, std::vector<int>> lockToThread;
+extern std::map<std::vector<int>, std::mutex*> threadToLock;
 
-int D = 3;  //Fix when thread exits
+int D;  //Fix when thread exits
 
 namespace tool {
     void acquire(uint64_t addr, ptx_thread_info* thread);

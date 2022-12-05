@@ -3,9 +3,12 @@
 std::map<std::vector<int>, std::set<std::pair<uint64_t, bool>>>  thr_lockset;
 std::map<uint64_t, std::set<uint64_t>> addr_lockset;
 
-// std::map<std::vector<int>, int> delay;
-// std::map<uint64_t, uint64_t> dLock;
-// std::map<std::mutex*, std::vector<int>> lockToThread;
+std::map<std::vector<int>, int> delay;
+std::map<uint64_t, std::mutex*> dLock;
+std::map<std::mutex*, std::vector<int>> lockToThread;
+std::map<std::vector<int>, std::mutex*> threadToLock;
+
+int D = 3;  //Fix when thread exits
 
 std::vector<int> getTID(ptx_thread_info* thread) {
     dim3 tid = thread->get_tid();
