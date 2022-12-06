@@ -1191,13 +1191,15 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
 {
    bool skip = false;
    int op_classification = 0;
-   if (!m_loop) {
-      addr_t pc = next_instr();
-      assert( pc == inst.pc ); // make sure timing model and functional model are in sync
-      const ptx_instruction *pI = m_func_info->get_instruction(pc);
+   addr_t pc;
+   if (m_loop)
+      pc = get_pc();
+   else 
+      pc = next_instr();
+   assert( pc == inst.pc ); // make sure timing model and functional model are in sync
+   const ptx_instruction *pI = m_func_info->get_instruction(pc);
+   if (!m_loop)
       set_npc( pc + pI->inst_size() );
-   }
-   
 
    try {
 
