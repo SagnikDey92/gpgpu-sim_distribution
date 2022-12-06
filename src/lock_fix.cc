@@ -95,7 +95,12 @@ namespace tool {
                 //Check if current thread holds it.
                 std::mutex* L = dLock[addr];
                 if (lockToThread[L] != ftid) {
-                    L->lock();
+                    if (L->try_lock())
+                        thread->m_loop = false;
+                    else {
+                        thread->m_loop = true;
+                        return false;
+                    }
                     lockToThread[L] = ftid;
                     dLock[addr] = L;
                     delay[ftid] = D;
