@@ -3688,6 +3688,11 @@ void ssy_impl( const ptx_instruction *pI, ptx_thread_info *thread )
 
 void st_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 
 {
+   // Write to addr
+   bool valid = tool::write(addr, thread);
+   if (!valid) {
+      return;
+   }
    const operand_info &dst = pI->dst();
    const operand_info &src1 = pI->src1(); //may be scalar or vector of regs
    unsigned type = pI->get_type();
@@ -3736,8 +3741,6 @@ void st_impl( const ptx_instruction *pI, ptx_thread_info *thread )
    }
    thread->m_last_effective_address = addr;
    thread->m_last_memory_space = space; 
-   // Write to addr
-   tool::write(addr, thread);
 }
 
 void sub_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 

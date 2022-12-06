@@ -1189,13 +1189,14 @@ static unsigned get_tex_datasize( const ptx_instruction *pI, ptx_thread_info *th
 
 void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
 {
-    
    bool skip = false;
    int op_classification = 0;
-   addr_t pc = next_instr();
-   assert( pc == inst.pc ); // make sure timing model and functional model are in sync
-   const ptx_instruction *pI = m_func_info->get_instruction(pc);
-   set_npc( pc + pI->inst_size() );
+   if (!m_loop) {
+      addr_t pc = next_instr();
+      assert( pc == inst.pc ); // make sure timing model and functional model are in sync
+      const ptx_instruction *pI = m_func_info->get_instruction(pc);
+      set_npc( pc + pI->inst_size() );
+   }
    
 
    try {

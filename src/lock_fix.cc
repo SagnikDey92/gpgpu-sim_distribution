@@ -43,7 +43,7 @@ namespace tool {
         }
     }
 
-    void write(uint64_t addr, ptx_thread_info* thread) {
+    bool write(uint64_t addr, ptx_thread_info* thread) {
         std::vector<int> ftid = getTID(thread);
         printf("(");
         for (int i = 0; i<6; ++i) {
@@ -79,7 +79,12 @@ namespace tool {
         if (temp.empty()) {
             if (dLock.find(addr) == dLock.end()) {
                 std::mutex* L = new std::mutex();
-                L->lock();
+                if (L->try_lock())
+                    thread->m_loop = false;
+                else {
+                    thread->m_loop = true;
+                    return false;
+                }
                 lockToThread[L] = ftid;
                 dLock[addr] = L;
                 delay[ftid] = D;
@@ -99,6 +104,7 @@ namespace tool {
                 // If current thread holds it, no change.
             }
         }
+        return true;
     }
 
     void read(uint64_t addr, ptx_thread_info* thread) {
