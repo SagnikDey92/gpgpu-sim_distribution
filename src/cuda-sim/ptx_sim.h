@@ -271,7 +271,7 @@ public:
       m_hw_wid=wid;
       m_hw_tid=tid;
       m_functionalSimulationMode = fsim;
-      m_loop = false;
+      m_loop = 0;
    }
 
    void ptx_fetch_inst( inst_t &inst ) const;
@@ -422,7 +422,7 @@ public:
 public:
    addr_t         m_last_effective_address;
    bool        m_branch_taken;
-   bool m_loop;
+   uint64_t m_loop;
    memory_space_t m_last_memory_space;
    dram_callback_t   m_last_dram_callback; 
    memory_space   *m_shared_mem;

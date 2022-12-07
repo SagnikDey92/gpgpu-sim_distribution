@@ -49,6 +49,9 @@
 #include "decuda_pred_table/decuda_pred_table.h"
 #include "../stream_manager.h"
 
+#include <mutex>
+#include "../lock_fix.h"
+
 int gpgpu_ptx_instruction_classification;
 void ** g_inst_classification_stat = NULL;
 void ** g_inst_op_classification_stat= NULL;
@@ -1193,22 +1196,31 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
    int op_classification = 0;
    addr_t pc;
    /*
-   if (!m_loop)
+   if (m_loop == 0)
    	printf("MASAKA!\n");
    else
 	printf("DATTEBAYO!\n");
    */
-   if (m_loop)
+   if (m_loop!=0) {
+      std::mutex* L = (std::mutex*) m_loop;
+      if (L->try_lock()) {
+         vector<int>  ftid = getTID(this);
+         threadToLock[ftid] = L;  
+         lockToThread[L] = ftid;
+         m_loop = 0;
+      }
+   }
+   if (m_loop!=0)
       pc = get_pc();
    else 
       pc = next_instr();
    assert( pc == inst.pc ); // make sure timing model and functional model are in sync
    const ptx_instruction *pI = m_func_info->get_instruction(pc);
-   if (!m_loop) {
+   if (m_loop == 0) {
       //printf("Loop!\n");
       set_npc( pc + pI->inst_size() );
    }
-   if (m_loop) {
+   if (m_loop!=0) {
       dim3 c = get_ctaid();
       dim3 t = get_tid();
       printf("(%d, %d, %d, %d, %d, %d) is looping!\n", t.x, t.y, t.z, c.x, c.y, c.z);
