@@ -8,7 +8,7 @@ std::map<uint64_t, std::mutex*> dLock;
 std::map<std::mutex*, std::vector<int>> lockToThread;
 std::map<std::vector<int>, std::set<std::mutex*>> threadToLock;
 
-int D = 3;  //Fix when thread exits
+int D = 1;  //Fix when thread exits
 
 std::vector<int> getTID(ptx_thread_info* thread) {
     dim3 tid = thread->get_tid();
