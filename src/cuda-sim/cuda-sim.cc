@@ -1192,13 +1192,14 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
    bool skip = false;
    int op_classification = 0;
    addr_t pc;
+	//m_loop = false;
    /*
    if (!m_loop)
    	printf("MASAKA!\n");
    else
 	printf("DATTEBAYO!\n");
    */
-   if (m_loop)
+   if (false)
       pc = p_PC;
    else {
       p_PC = pc;
@@ -1206,7 +1207,7 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
    }
    //assert( pc == inst.pc ); // make sure timing model and functional model are in sync
    const ptx_instruction *pI = m_func_info->get_instruction(pc);
-   if (!m_loop) {
+   if (true) {
       //printf("Loop!\n");
       set_npc( pc + pI->inst_size() );
    }
@@ -1343,6 +1344,7 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
       if ( ptx_debug_exec_dump_cond<10>(get_uid(), pc) )
          dump_regs(stdout);
    }
+   if (!m_loop)
    update_pc();
    g_ptx_sim_num_insn++;
    
@@ -1384,7 +1386,7 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
       inst.space = insn_space;
       inst.set_addr(lane_id, insn_memaddr);
       inst.data_size = insn_data_size; // simpleAtomicIntrinsics
-      assert( inst.memory_op == insn_memory_op );
+      //assert( inst.memory_op == insn_memory_op );
    } 
 
    } catch ( int x  ) {

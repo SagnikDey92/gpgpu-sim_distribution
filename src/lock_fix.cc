@@ -8,7 +8,7 @@ std::map<uint64_t, std::mutex*> dLock;
 std::map<std::mutex*, std::vector<int>> lockToThread;
 std::map<std::vector<int>, std::mutex*> threadToLock;
 
-int D = 3;  //Fix when thread exits
+int D = 1;  //Fix when thread exits
 
 std::vector<int> getTID(ptx_thread_info* thread) {
     dim3 tid = thread->get_tid();
@@ -60,7 +60,7 @@ namespace tool {
             delay[ftid]--;  // Reduce delay
             if (delay[ftid] == 0) {
                 //Unlock
-		printf("unlocked 0: cat:%d\n", ftid[3]);
+		printf("unlocked %x: cta:%d\n",threadToLock[ftid], ftid[3]);
                 threadToLock[ftid]->unlock();
             }
         }
@@ -85,7 +85,7 @@ namespace tool {
                 std::mutex* L = new std::mutex();
                 if (L->try_lock()) {
                     thread->m_loop = false;
-		    printf("locked: cat:%d\n", ftid[3]);
+		    printf("locked: %x, cat:%d\n",L, ftid[3]);
 		}
                 else {
                     thread->m_loop = true;
@@ -93,6 +93,7 @@ namespace tool {
                     return false;
                 }
                 lockToThread[L] = ftid;
+		threadToLock[ftid] = L;
                 dLock[addr] = L;
                 delay[ftid] = D;
                 printf("Accessed address %x with no locks held!. Associated lock %x with it.\n", addr, L);
@@ -104,7 +105,7 @@ namespace tool {
                 if (lockToThread[L] != ftid) {
                     if (L->try_lock()) {
                         thread->m_loop = false;
-			printf("locked: cat:%d\n", ftid[3]);
+			printf("locked: %x, cat:%d\n",L, ftid[3]);
 		    }
                     else {
 			printf("looping!\n");
@@ -112,6 +113,7 @@ namespace tool {
                         return false;
                     }
                     lockToThread[L] = ftid;
+		    threadToLock[ftid] = L;
                     dLock[addr] = L;
                     delay[ftid] = D;
                 }
