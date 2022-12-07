@@ -45,7 +45,7 @@ namespace tool {
 
     void write(uint64_t addr, ptx_thread_info* thread, bool w) {
         std::vector<int> ftid = getTID(thread);
-        printf("(");
+        printf("tool: (");
         for (int i = 0; i<6; ++i) {
             printf("%d,", ftid[i]);
         }
@@ -60,7 +60,7 @@ namespace tool {
             delay[ftid]--;  // Reduce delay
             if (delay[ftid] == 0) {
                 //Unlock
-                printf("cta: %d is releasing locks: ", ftid[3]);
+                printf("tool: cta: %d is releasing locks: ", ftid[3]);
                 for (std::mutex* L: threadToLock[ftid]) {
                     printf("%x ", L);
                     L->unlock();
@@ -89,16 +89,16 @@ namespace tool {
             if (dLock.find(addr) == dLock.end()) {
                std::mutex* L = new std::mutex(); 
                dLock[addr] = L;
-               printf("Found addr: %x without locks. Associated lock %x to it.\n", addr, L);
+               printf("tool: Found addr: %x without locks. Associated lock %x to it.\n", addr, L);
             }
             std::mutex* L = dLock[addr];
             if(L->try_lock()) {
-                printf("cta: %d got lock %x\n", ftid[3], L);
+                printf("tool: cta: %d got lock %x\n", ftid[3], L);
                 lockToThread[L] = ftid;
                 threadToLock[ftid].insert(L);
                 thread->m_loop = false;
             } else {
-                printf("cta: %d is looping!\n", ftid[3]);
+                printf("tool: cta: %d is looping!\n", ftid[3]);
                 thread->m_loop = true;
             }
         }
@@ -111,7 +111,7 @@ namespace tool {
     void exit_thr(ptx_thread_info* thread) {
         std::vector<int> ftid = getTID(thread);
         //Unlock
-        printf("cta: %d is releasing locks: ", ftid[3]);
+        printf("tool: cta: %d is releasing locks: ", ftid[3]);
         for (std::mutex* L: threadToLock[ftid]) {
             printf("%x ", L);
             L->unlock();

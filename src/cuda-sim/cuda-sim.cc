@@ -1325,7 +1325,8 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
       if ( ptx_debug_exec_dump_cond<10>(get_uid(), pc) )
          dump_regs(stdout);
    }
-   update_pc();
+   if (!m_loop)
+      update_pc();
    g_ptx_sim_num_insn++;
    
    //not using it with functional simulation mode
