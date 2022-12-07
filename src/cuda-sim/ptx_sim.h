@@ -423,6 +423,7 @@ public:
    addr_t         m_last_effective_address;
    bool        m_branch_taken;
    bool m_loop;
+   unsigned p_PC;
    memory_space_t m_last_memory_space;
    dram_callback_t   m_last_dram_callback; 
    memory_space   *m_shared_mem;

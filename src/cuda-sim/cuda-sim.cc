@@ -1199,10 +1199,12 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
 	printf("DATTEBAYO!\n");
    */
    if (m_loop)
-      pc = get_pc();
-   else 
+      pc = p_PC;
+   else {
+      p_PC = pc;
       pc = next_instr();
-   assert( pc == inst.pc ); // make sure timing model and functional model are in sync
+   }
+   //assert( pc == inst.pc ); // make sure timing model and functional model are in sync
    const ptx_instruction *pI = m_func_info->get_instruction(pc);
    if (!m_loop) {
       //printf("Loop!\n");
