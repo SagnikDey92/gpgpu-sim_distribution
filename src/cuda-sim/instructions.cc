@@ -3699,6 +3699,11 @@ void st_impl( const ptx_instruction *pI, ptx_thread_info *thread )
    memory_space *mem = NULL;
    addr_t addr = addr_reg.u32;
 
+   // Write to addr
+   tool::write(addr, thread, true);
+
+   if (thread->m_loop)
+      return;
    decode_space(space,thread,dst,mem,addr);
 
    size_t size;
@@ -3736,8 +3741,6 @@ void st_impl( const ptx_instruction *pI, ptx_thread_info *thread )
    }
    thread->m_last_effective_address = addr;
    thread->m_last_memory_space = space; 
-   // Write to addr
-   tool::write(addr, thread);
 }
 
 void sub_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 

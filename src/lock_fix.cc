@@ -6,7 +6,7 @@ std::map<uint64_t, std::set<uint64_t>> addr_lockset;
 std::map<std::vector<int>, int> delay;
 std::map<uint64_t, std::mutex*> dLock;
 std::map<std::mutex*, std::vector<int>> lockToThread;
-std::map<std::vector<int>, std::mutex*> threadToLock;
+std::map<std::vector<int>, std::set<std::mutex*>> threadToLock;
 
 int D = 3;  //Fix when thread exits
 
@@ -43,13 +43,16 @@ namespace tool {
         }
     }
 
-    void write(uint64_t addr, ptx_thread_info* thread) {
+    void write(uint64_t addr, ptx_thread_info* thread, bool w) {
         std::vector<int> ftid = getTID(thread);
         printf("(");
         for (int i = 0; i<6; ++i) {
             printf("%d,", ftid[i]);
         }
-        printf("): write/read at %x\n", addr);
+        if (w)
+            printf("): write at %x\n", addr);
+        else
+            printf("): read at %x\n", addr);
         std::set<uint64_t> prev = addr_lockset[addr];
         std::set<uint64_t> curr;
 
@@ -57,7 +60,13 @@ namespace tool {
             delay[ftid]--;  // Reduce delay
             if (delay[ftid] == 0) {
                 //Unlock
-                threadToLock[ftid]->unlock();
+                printf("cta: %d is releasing locks: ", ftid[3]);
+                for (std::mutex* L: threadToLock[ftid]) {
+                    printf("%x ", L);
+                    L->unlock();
+                }
+                printf("\n");
+                threadToLock[ftid].clear();
             }
         }
 
@@ -78,35 +87,36 @@ namespace tool {
             addr_lockset[addr].insert(l);
         if (temp.empty()) {
             if (dLock.find(addr) == dLock.end()) {
-                std::mutex* L = new std::mutex();
-                L->lock();
-                lockToThread[L] = ftid;
-                dLock[addr] = L;
-                delay[ftid] = D;
-                printf("Accessed address %x with no locks held!. Associated lock %x with it.\n", addr, L);
+               std::mutex* L = new std::mutex(); 
+               dLock[addr] = L;
+               printf("Found addr: %x without locks. Associated lock %x to it.\n", addr, L);
             }
-            else {
-                //Already have lock associated with this addr
-                //Check if current thread holds it.
-                std::mutex* L = dLock[addr];
-                if (lockToThread[L] != ftid) {
-                    L->lock();
-                    lockToThread[L] = ftid;
-                    dLock[addr] = L;
-                    delay[ftid] = D;
-                }
-
-                // If current thread holds it, no change.
+            std::mutex* L = dLock[addr];
+            if(L->try_lock()) {
+                printf("cta: %d got lock %x\n", ftid[3], L);
+                lockToThread[L] = ftid;
+                threadToLock[ftid].insert(L);
+                thread->m_loop = false;
+            } else {
+                printf("cta: %d is looping!\n", ftid[3]);
+                thread->m_loop = true;
             }
         }
     }
 
     void read(uint64_t addr, ptx_thread_info* thread) {
-        write(addr, thread);
+        write(addr, thread, false);
     }
 
     void exit_thr(ptx_thread_info* thread) {
         std::vector<int> ftid = getTID(thread);
-        threadToLock[ftid]->unlock();
+        //Unlock
+        printf("cta: %d is releasing locks: ", ftid[3]);
+        for (std::mutex* L: threadToLock[ftid]) {
+            printf("%x ", L);
+            L->unlock();
+        }
+        printf("\n");
+        threadToLock[ftid].clear();
     }
 }
