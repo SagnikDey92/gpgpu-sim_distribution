@@ -271,6 +271,7 @@ public:
       m_hw_wid=wid;
       m_hw_tid=tid;
       m_functionalSimulationMode = fsim;
+      m_loop = false;
    }
 
    void ptx_fetch_inst( inst_t &inst ) const;
