@@ -25,7 +25,7 @@ namespace tool {
 
     void activate_locks(ptx_thread_info* thread);
 
-    bool write(uint64_t addr, ptx_thread_info* thread);
+    bool write(uint64_t addr, ptx_thread_info* thread, bool w);
 
     void exit_thr(ptx_thread_info* thread);
 
