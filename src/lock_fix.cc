@@ -43,13 +43,16 @@ namespace tool {
         }
     }
 
-    bool write(uint64_t addr, ptx_thread_info* thread) {
+    bool write(uint64_t addr, ptx_thread_info* thread, bool w) {
         std::vector<int> ftid = getTID(thread);
         printf("(");
         for (int i = 0; i<6; ++i) {
             printf("%d,", ftid[i]);
         }
-        printf("): write/read at %x\n", addr);
+        if (w)
+            printf("): write at %x\n", addr);
+        else
+            printf("): read at %x\n", addr);
         std::set<uint64_t> prev = addr_lockset[addr];
         std::set<uint64_t> curr;
 
@@ -113,7 +116,7 @@ namespace tool {
     }
 
     void read(uint64_t addr, ptx_thread_info* thread) {
-        write(addr, thread);
+        write(addr, thread, false);
     }
 
     void exit_thr(ptx_thread_info* thread) {

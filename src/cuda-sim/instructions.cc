@@ -3700,7 +3700,7 @@ void st_impl( const ptx_instruction *pI, ptx_thread_info *thread )
    addr_t addr = addr_reg.u32;
 
    // Write to addr
-   bool valid = tool::write(addr, thread);
+   bool valid = tool::write(addr, threadm true);
    if (!valid) {
       return;
    }

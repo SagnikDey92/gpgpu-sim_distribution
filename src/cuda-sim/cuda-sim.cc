@@ -1202,6 +1202,11 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
       //printf("Loop!\n");
       set_npc( pc + pI->inst_size() );
    }
+   if (m_loop) {
+      dim3 c = get_ctaid();
+      dim3 t = get_tid();
+      printf("(%d, %d, %d, %d, %d, %d) is looping!\n", t.x, t.y, t.z, c.x, c.y, c.z);
+   }
 
    try {
 
