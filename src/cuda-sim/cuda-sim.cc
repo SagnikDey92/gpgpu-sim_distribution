@@ -1204,7 +1204,7 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
    if (m_loop!=0) {
       std::mutex* L = (std::mutex*) m_loop;
       if (L->try_lock()) {
-         vector<int>  ftid = getTID(this);
+         std::vector<int>  ftid = getTID(this);
          threadToLock[ftid] = L;  
          lockToThread[L] = ftid;
          m_loop = 0;
