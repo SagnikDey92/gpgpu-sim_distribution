@@ -2225,6 +2225,7 @@ void ex2_impl( const ptx_instruction *pI, ptx_thread_info *thread )
 
 void exit_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 
 {
+   printf("lock exit\n");
    tool::exit_thr(thread);
    thread->set_done();
    thread->exitCore();

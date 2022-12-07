@@ -60,6 +60,7 @@ namespace tool {
             delay[ftid]--;  // Reduce delay
             if (delay[ftid] == 0) {
                 //Unlock
+		printf("unlocked 0: cat:%d\n", ftid[3]);
                 threadToLock[ftid]->unlock();
             }
         }
@@ -82,10 +83,13 @@ namespace tool {
         if (temp.empty()) {
             if (dLock.find(addr) == dLock.end()) {
                 std::mutex* L = new std::mutex();
-                if (L->try_lock())
+                if (L->try_lock()) {
                     thread->m_loop = false;
+		    printf("locked: cat:%d\n", ftid[3]);
+		}
                 else {
                     thread->m_loop = true;
+			printf("looping!\n");
                     return false;
                 }
                 lockToThread[L] = ftid;
@@ -98,9 +102,12 @@ namespace tool {
                 //Check if current thread holds it.
                 std::mutex* L = dLock[addr];
                 if (lockToThread[L] != ftid) {
-                    if (L->try_lock())
+                    if (L->try_lock()) {
                         thread->m_loop = false;
+			printf("locked: cat:%d\n", ftid[3]);
+		    }
                     else {
+			printf("looping!\n");
                         thread->m_loop = true;
                         return false;
                     }
@@ -122,5 +129,6 @@ namespace tool {
     void exit_thr(ptx_thread_info* thread) {
         std::vector<int> ftid = getTID(thread);
         threadToLock[ftid]->unlock();
+        printf("unlocked: cat:%d\n", ftid[3]);
     }
 }

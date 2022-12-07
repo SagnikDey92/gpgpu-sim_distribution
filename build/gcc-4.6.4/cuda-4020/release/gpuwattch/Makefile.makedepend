@@ -6,6 +6,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/XML_Parse.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/XML_Parse.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/XML_Parse.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/XML_Parse.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/XML_Parse.o: xmlParser.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/XML_Parse.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/XML_Parse.o: /usr/include/alloca.h
@@ -20,6 +21,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/array.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/array.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/array.o: /usr/include/string.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/array.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/array.o: /usr/include/stdio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/array.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/array.o: /usr/include/_G_config.h
@@ -47,6 +49,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/basic_components.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/basic_components.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/basic_components.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/basic_components.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/basic_components.o: xmlParser.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/basic_components.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/basic_components.o: /usr/include/alloca.h
@@ -67,6 +70,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/core.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/core.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/core.o: /usr/include/string.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/core.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/core.o: /usr/include/stdio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/core.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/core.o: /usr/include/_G_config.h
@@ -115,6 +119,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/interconnect.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/interconnect.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/interconnect.o: /usr/include/string.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/interconnect.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/interconnect.o: /usr/include/stdio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/interconnect.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/interconnect.o: /usr/include/_G_config.h
@@ -145,6 +150,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/iocontrollers.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/iocontrollers.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/iocontrollers.o: /usr/include/string.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/iocontrollers.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/iocontrollers.o: /usr/include/stdio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/iocontrollers.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/iocontrollers.o: /usr/include/_G_config.h
@@ -181,6 +187,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/logic.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/logic.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/logic.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/logic.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/logic.o: xmlParser.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/logic.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/logic.o: /usr/include/alloca.h
@@ -204,6 +211,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/main.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/main.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/main.o: /usr/include/string.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/main.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/main.o: /usr/include/stdio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/main.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/main.o: /usr/include/_G_config.h
@@ -258,6 +266,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/memoryctrl.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/memoryctrl.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/memoryctrl.o: /usr/include/string.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/memoryctrl.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/memoryctrl.o: /usr/include/stdio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/memoryctrl.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/memoryctrl.o: /usr/include/_G_config.h
@@ -289,6 +298,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/noc.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/noc.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/noc.o: /usr/include/string.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/noc.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/noc.o: /usr/include/stdio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/noc.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/noc.o: /usr/include/_G_config.h
@@ -326,6 +336,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/processor.o: /usr/include/string.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/processor.o: /usr/include/features.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/processor.o: /usr/include/stdc-predef.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/processor.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/processor.o: /usr/include/stdio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/processor.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/processor.o: /usr/include/_G_config.h
@@ -384,6 +395,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/sharedcache.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/sharedcache.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/sharedcache.o: /usr/include/string.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/sharedcache.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/sharedcache.o: /usr/include/stdio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/sharedcache.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/sharedcache.o: /usr/include/_G_config.h
@@ -420,12 +432,13 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/stdc-predef.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/wchar.h
-/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/memory.h
-/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/string.h
-/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/assert.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/stdio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/_G_config.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/xlocale.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/memory.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/string.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/xmlParser.o: /usr/include/assert.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/gpgpu_sim_wrapper.o: gpgpu_sim_wrapper.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/gpgpu_sim_wrapper.o: processor.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/gpgpu_sim_wrapper.o: XML_Parse.h
@@ -435,6 +448,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/gpgpu_sim_wrapper.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/gpgpu_sim_wrapper.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/gpgpu_sim_wrapper.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/gpgpu_sim_wrapper.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/gpgpu_sim_wrapper.o: xmlParser.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/gpgpu_sim_wrapper.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpuwattch/gpgpu_sim_wrapper.o: /usr/include/alloca.h

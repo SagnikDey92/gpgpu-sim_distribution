@@ -3,6 +3,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/addrdec.o: /usr/include/string.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/addrdec.o: /usr/include/features.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/addrdec.o: /usr/include/stdc-predef.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/addrdec.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/addrdec.o: addrdec.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/addrdec.o: /usr/include/stdio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/addrdec.o: /usr/include/libio.h
@@ -39,6 +40,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram.o: ../abstract_hardware_model.h
@@ -73,6 +75,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram_sched.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram_sched.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram_sched.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram_sched.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram_sched.o: /usr/include/assert.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram_sched.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/dram_sched.o: /usr/include/alloca.h
@@ -103,6 +106,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-cache.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-cache.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-cache.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-cache.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-cache.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-cache.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-cache.o: gpu-misc.h
@@ -125,6 +129,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-sim.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-sim.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-sim.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-sim.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-sim.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-sim.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/gpu-sim.o: ../abstract_hardware_model.h
@@ -177,6 +182,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/icnt_wrapper.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/icnt_wrapper.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/icnt_wrapper.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/icnt_wrapper.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/icnt_wrapper.o: /usr/include/assert.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/icnt_wrapper.o: ../intersim2/globals.hpp
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/icnt_wrapper.o: ../intersim2/interconnect_interface.hpp
@@ -191,6 +197,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/l2cache.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/l2cache.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/l2cache.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/l2cache.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/l2cache.o: /usr/include/string.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/l2cache.o: ../option_parser.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/l2cache.o: mem_fetch.h
@@ -226,6 +233,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_fetch.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_fetch.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_fetch.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_fetch.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_fetch.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_fetch.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_fetch.o: /usr/include/assert.h
@@ -258,6 +266,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_latency_stat.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_latency_stat.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_latency_stat.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_latency_stat.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_latency_stat.o: /usr/include/zlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_latency_stat.o: gpu-sim.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/mem_latency_stat.o: ../option_parser.h
@@ -295,6 +304,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_interface.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_interface.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_interface.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_interface.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_interface.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_interface.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_interface.o: ../abstract_hardware_model.h
@@ -327,6 +337,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_stat.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_stat.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_stat.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_stat.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_stat.o: /usr/include/zlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_stat.o: mem_latency_stat.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/power_stat.o: gpu-sim.h
@@ -363,6 +374,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/scoreboard.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/scoreboard.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/scoreboard.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/scoreboard.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/scoreboard.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/scoreboard.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/scoreboard.o: /usr/include/assert.h
@@ -398,6 +410,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/shader.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/shader.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/shader.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/shader.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/shader.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/shader.o: /usr/include/alloca.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/shader.o: /usr/include/math.h
@@ -454,6 +467,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/stat-tool.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/stat-tool.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/stat-tool.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/stat-tool.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/stat-tool.o: /usr/include/zlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/stat-tool.o: /usr/include/stdlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/stat-tool.o: /usr/include/alloca.h
@@ -465,6 +479,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/traffic_breakdown.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/traffic_breakdown.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/traffic_breakdown.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/traffic_breakdown.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/traffic_breakdown.o: mem_fetch.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/traffic_breakdown.o: addrdec.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/traffic_breakdown.o: /usr/include/stdlib.h
@@ -480,6 +495,7 @@
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/visualizer.o: /usr/include/libio.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/visualizer.o: /usr/include/_G_config.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/visualizer.o: /usr/include/wchar.h
+/home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/visualizer.o: /usr/include/xlocale.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/visualizer.o: /usr/include/zlib.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/visualizer.o: gpu-sim.h
 /home/gpgpu-sim/gpgpu-sim_distribution/build/gcc-4.6.4/cuda-4020/release/gpgpu-sim/visualizer.o: ../option_parser.h

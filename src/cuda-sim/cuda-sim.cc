@@ -1192,6 +1192,12 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
    bool skip = false;
    int op_classification = 0;
    addr_t pc;
+   /*
+   if (!m_loop)
+   	printf("MASAKA!\n");
+   else
+	printf("DATTEBAYO!\n");
+   */
    if (m_loop)
       pc = get_pc();
    else 

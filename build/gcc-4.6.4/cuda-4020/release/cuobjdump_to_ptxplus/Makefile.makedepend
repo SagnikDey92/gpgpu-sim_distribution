@@ -15,25 +15,25 @@ cuobjdumpInstList.o: /usr/include/stdlib.h /usr/include/alloca.h
 cuobjdump_to_ptxplus.o: /usr/include/stdio.h /usr/include/features.h
 cuobjdump_to_ptxplus.o: /usr/include/stdc-predef.h /usr/include/libio.h
 cuobjdump_to_ptxplus.o: /usr/include/_G_config.h /usr/include/wchar.h
-cuobjdump_to_ptxplus.o: cuobjdumpInstList.h cuobjdumpInst.h
-cuobjdump_to_ptxplus.o: /usr/include/string.h /usr/include/xlocale.h
+cuobjdump_to_ptxplus.o: /usr/include/xlocale.h cuobjdumpInstList.h
+cuobjdump_to_ptxplus.o: cuobjdumpInst.h /usr/include/string.h
 cuobjdump_to_ptxplus.o: /usr/include/stdlib.h /usr/include/alloca.h
 elf_lexer.o: /usr/include/stdio.h /usr/include/features.h
 elf_lexer.o: /usr/include/stdc-predef.h /usr/include/libio.h
 elf_lexer.o: /usr/include/_G_config.h /usr/include/wchar.h
-elf_lexer.o: /usr/include/string.h /usr/include/xlocale.h
+elf_lexer.o: /usr/include/xlocale.h /usr/include/string.h
 elf_lexer.o: /usr/include/errno.h /usr/include/stdlib.h /usr/include/alloca.h
 elf_lexer.o: elf_parser.hh /usr/include/unistd.h /usr/include/getopt.h
 elf_parser.o: /usr/include/stdio.h /usr/include/features.h
 elf_parser.o: /usr/include/stdc-predef.h /usr/include/libio.h
 elf_parser.o: /usr/include/_G_config.h /usr/include/wchar.h
-elf_parser.o: cuobjdumpInstList.h cuobjdumpInst.h /usr/include/string.h
-elf_parser.o: /usr/include/xlocale.h /usr/include/stdlib.h
+elf_parser.o: /usr/include/xlocale.h cuobjdumpInstList.h cuobjdumpInst.h
+elf_parser.o: /usr/include/string.h /usr/include/stdlib.h
 elf_parser.o: /usr/include/alloca.h
 header_lexer.o: /usr/include/stdio.h /usr/include/features.h
 header_lexer.o: /usr/include/stdc-predef.h /usr/include/libio.h
 header_lexer.o: /usr/include/_G_config.h /usr/include/wchar.h
-header_lexer.o: /usr/include/string.h /usr/include/xlocale.h
+header_lexer.o: /usr/include/xlocale.h /usr/include/string.h
 header_lexer.o: /usr/include/errno.h /usr/include/stdlib.h
 header_lexer.o: /usr/include/alloca.h header_parser.hh /usr/include/unistd.h
 header_lexer.o: /usr/include/getopt.h
@@ -46,13 +46,13 @@ header_parser.o: /usr/include/alloca.h
 sass_lexer.o: /usr/include/stdio.h /usr/include/features.h
 sass_lexer.o: /usr/include/stdc-predef.h /usr/include/libio.h
 sass_lexer.o: /usr/include/_G_config.h /usr/include/wchar.h
-sass_lexer.o: /usr/include/string.h /usr/include/xlocale.h
+sass_lexer.o: /usr/include/xlocale.h /usr/include/string.h
 sass_lexer.o: /usr/include/errno.h /usr/include/stdlib.h
 sass_lexer.o: /usr/include/alloca.h sass_parser.hh /usr/include/unistd.h
 sass_lexer.o: /usr/include/getopt.h
 sass_parser.o: /usr/include/stdio.h /usr/include/features.h
 sass_parser.o: /usr/include/stdc-predef.h /usr/include/libio.h
 sass_parser.o: /usr/include/_G_config.h /usr/include/wchar.h
-sass_parser.o: cuobjdumpInstList.h cuobjdumpInst.h /usr/include/string.h
-sass_parser.o: /usr/include/xlocale.h /usr/include/stdlib.h
+sass_parser.o: /usr/include/xlocale.h cuobjdumpInstList.h cuobjdumpInst.h
+sass_parser.o: /usr/include/string.h /usr/include/stdlib.h
 sass_parser.o: /usr/include/alloca.h
