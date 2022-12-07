@@ -84,11 +84,11 @@ namespace tool {
             if (dLock.find(addr) == dLock.end()) {
                 std::mutex* L = new std::mutex();
                 if (L->try_lock()) {
-                    thread->m_loop = 0;
+                    thread->m_loop = false;
 		    printf("locked: cat:%d\n", ftid[3]);
 		}
                 else {
-                    thread->m_loop = (uint64_t)L;
+                    thread->m_loop = true;
 			printf("looping!\n");
                     return false;
                 }
@@ -103,12 +103,12 @@ namespace tool {
                 std::mutex* L = dLock[addr];
                 if (lockToThread[L] != ftid) {
                     if (L->try_lock()) {
-                        thread->m_loop = 0;
+                        thread->m_loop = false;
 			printf("locked: cat:%d\n", ftid[3]);
 		    }
                     else {
 			printf("looping!\n");
-                        thread->m_loop = (uint64_t)L;
+                        thread->m_loop = true;
                         return false;
                     }
                     lockToThread[L] = ftid;
