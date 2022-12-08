@@ -94,6 +94,7 @@ namespace tool {
             std::mutex* L = dLock[addr];
             if(L->try_lock()) {
                 printf("tool: cta: %d got lock %x\n", ftid[3], L);
+		delay[ftid] = D;
                 lockToThread[L] = ftid;
                 threadToLock[ftid].insert(L);
                 thread->m_loop = false;
@@ -111,7 +112,7 @@ namespace tool {
     void exit_thr(ptx_thread_info* thread) {
         std::vector<int> ftid = getTID(thread);
         //Unlock
-        printf("tool: cta: %d is releasing locks: ", ftid[3]);
+        printf("tool: cta: %d is releasing locks after thread exit: ", ftid[3]);
         for (std::mutex* L: threadToLock[ftid]) {
             printf("%x ", L);
             L->unlock();

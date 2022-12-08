@@ -49,6 +49,8 @@
 #include "decuda_pred_table/decuda_pred_table.h"
 #include "../stream_manager.h"
 
+#include "../lock_fix.h"
+
 int gpgpu_ptx_instruction_classification;
 void ** g_inst_classification_stat = NULL;
 void ** g_inst_op_classification_stat= NULL;
@@ -1192,6 +1194,7 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
     
    bool skip = false;
    int op_classification = 0;
+   printf("tool something cta: %d\n", get_ctaid().x);
    addr_t pc = next_instr();
    assert( pc == inst.pc ); // make sure timing model and functional model are in sync
    const ptx_instruction *pI = m_func_info->get_instruction(pc);
@@ -1229,6 +1232,8 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
    }
    
    if( skip ) {
+      printf("tool: skip!\n");
+      tool::exit_thr(this);
       inst.set_not_active(lane_id);
    } else {
       const ptx_instruction *pI_saved = pI;
