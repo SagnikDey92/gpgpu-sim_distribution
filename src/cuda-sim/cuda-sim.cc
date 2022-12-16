@@ -1233,7 +1233,7 @@ void ptx_thread_info::ptx_exec_inst( warp_inst_t &inst, unsigned lane_id)
    
    if( skip ) {
       printf("tool: skip!\n");
-      tool::exit_thr(this);
+      tool::exit_thr(this, pI->warp_size());
       inst.set_not_active(lane_id);
    } else {
       const ptx_instruction *pI_saved = pI;
