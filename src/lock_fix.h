@@ -19,15 +19,15 @@ extern std::map<std::vector<int>, std::set<std::mutex*>> threadToLock;
 extern int D;  //Fix when thread exits
 
 namespace tool {
-    void acquire(uint64_t addr, ptx_thread_info* thread);
+    void acquire(uint64_t addr, ptx_thread_info* thread, unsigned warp_size);
 
-    void release(uint64_t addr, ptx_thread_info* thread);
+    void release(uint64_t addr, ptx_thread_info* thread, unsigned warp_size);
 
-    void activate_locks(ptx_thread_info* thread);
+    void activate_locks(ptx_thread_info* thread, unsigned warp_size);
 
-    void write(uint64_t addr, ptx_thread_info* thread, bool w);
+    void write(uint64_t addr, ptx_thread_info* thread, bool w, unsigned warp_size);
 
-    void exit_thr(ptx_thread_info* thread);
+    void exit_thr(ptx_thread_info* thread, unsigned warp_size);
 
-    void read(uint64_t addr, ptx_thread_info* thread);
+    void read(uint64_t addr, ptx_thread_info* thread, unsigned warp_size);
 }
