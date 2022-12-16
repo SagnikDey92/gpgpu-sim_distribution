@@ -1029,7 +1029,7 @@ void atom_callback( const inst_t* inst, ptx_thread_info* thread)
             data_ready = true;
             //Lock operation
             if(src2_data.u32 == 0 && src3_data.u32 == 1 && data.u32 == 0)
-               tool::acquire(effective_address, thread);
+               tool::acquire(effective_address, thread, pI->warp_size());
             break;
          case B64_TYPE:
          case U64_TYPE:
@@ -1037,14 +1037,14 @@ void atom_callback( const inst_t* inst, ptx_thread_info* thread)
             data_ready = true;
             // Lock operation
             if(src2_data.u64 == 0 && src3_data.u64 == 1 && data.u64 == 0)
-               tool::acquire(effective_address, thread);
+               tool::acquire(effective_address, thread, pI->warp_size());
             break;
          case S32_TYPE:
             op_result.s32 = MY_CAS_I(data.s32, src2_data.s32, src3_data.s32);
             data_ready = true;
             // Lock operation
             if(src2_data.s32 == 0 && src3_data.s32 == 1 && data.s32 == 0)
-               tool::acquire(effective_address, thread);
+               tool::acquire(effective_address, thread, pI->warp_size());
             break;
          default:
             printf("Execution error: type mismatch (%x) with instruction\natom.CAS only accepts b32 and b64\n", to_type);
@@ -1064,14 +1064,14 @@ void atom_callback( const inst_t* inst, ptx_thread_info* thread)
             data_ready = true;
             // Unlock operation
             if(src2_data.u32 == 0)
-               tool::release(effective_address, thread);
+               tool::release(effective_address, thread, pI->warp_size());
             break;
             break;
          case B64_TYPE:
          case U64_TYPE:
             // Unlock operation
             if(src2_data.u64 == 0)
-               tool::release(effective_address, thread);
+               tool::release(effective_address, thread, pI->warp_size());
             break;
             op_result.u64 = MY_EXCH(data.u64, src2_data.u64);
             data_ready = true;
@@ -1081,7 +1081,7 @@ void atom_callback( const inst_t* inst, ptx_thread_info* thread)
             data_ready = true;
             // Unlock operation
             if(src2_data.s32 == 0)
-               tool::release(effective_address, thread);
+               tool::release(effective_address, thread, pI->warp_size());
             break;
          default:
             printf("Execution error: type mismatch (%x) with instruction\natom.EXCH only accepts b32\n", to_type);
@@ -2225,7 +2225,7 @@ void ex2_impl( const ptx_instruction *pI, ptx_thread_info *thread )
 
 void exit_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 
 {
-   tool::exit_thr(thread);
+   tool::exit_thr(thread, pI->warp_size());
    thread->set_done();
    thread->exitCore();
    thread->registerExit();
@@ -2359,7 +2359,7 @@ void ld_exec( const ptx_instruction *pI, ptx_thread_info *thread )
    }
    thread->m_last_effective_address = addr;
    thread->m_last_memory_space = space; 
-   tool::read(addr, thread);
+   tool::read(addr, thread, pI->warp_size());
    // Read from addr
 }
 
@@ -2611,7 +2611,7 @@ void max_impl( const ptx_instruction *pI, ptx_thread_info *thread )
 void membar_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 
 { 
    // handled by timing simulator 
-   tool::activate_locks(thread);
+   tool::activate_locks(thread, pI->warp_size());
 }
 
 void min_impl( const ptx_instruction *pI, ptx_thread_info *thread ) 
@@ -3700,7 +3700,7 @@ void st_impl( const ptx_instruction *pI, ptx_thread_info *thread )
    addr_t addr = addr_reg.u32;
 
    // Write to addr
-   tool::write(addr, thread, true);
+   tool::write(addr, thread, true, pI->warp_size());
 
    if (thread->m_loop)
       return;
