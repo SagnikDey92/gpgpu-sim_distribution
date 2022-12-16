@@ -53,8 +53,13 @@ namespace tool {
             printf("): write at %x\n", addr);
         else
             printf("): read at %x\n", addr);
-        std::set<uint64_t> prev = addr_lockset[addr];
+        std::set<uint64_t> prev;
         std::set<uint64_t> curr;
+        bool all = false;
+        if (addr_lockset.find(addr) != addr_lockset.end())
+            prev = addr_lockset[addr];
+        else 
+            all = true; //Lockset has everything
 
         if (delay.find(ftid) != delay.end() && delay[ftid]!=0) {
             delay[ftid]--;  // Reduce delay
@@ -74,13 +79,15 @@ namespace tool {
             if (p.second)
                 curr.insert(p.first);
         }
+
         //Intersect into temp
         std::set<uint64_t> temp;
         for (uint64_t l: curr) {
-            if (prev.count(l)) {
+            if (all || prev.count(l)) {
                 temp.insert(l);
             }
         }
+
         //Place temp into addr lockset
         addr_lockset[addr].clear();
         for (uint64_t l: temp)
